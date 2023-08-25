@@ -8,7 +8,7 @@ import cors from "cors";
 import cookies from "cookie-parser";
 
 const app = Express();
-const PORT = 5000;
+const PORT = process.env.PORT;
 
 app.use(json());
 app.use(cookies());
