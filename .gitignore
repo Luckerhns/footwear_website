@@ -1,0 +1,13 @@
+
+#DEPENDENCIES
+
+node_modules
+
+#PROJECT CONFIGS
+
+.env*.local
+
+#ANOTHER
+
+Training
+template
