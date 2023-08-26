@@ -3,17 +3,20 @@ import ModelRouter from './ModelRouter'
 import TypeBrandRouter from './TypeBrandRouter'
 import UserRouter from './UserRouter'
 import TypeRouter from './TypeRouter'
+import ShoesRouter from './ShoesRouter'
 import ActivateController from '../api/controllers/Activate.controller'
-import BrandController from '../api/controllers/Brand.controller'
-import TypeController from '../api/controllers/Type.controller'
 import BrandRouter from './BrandRouter'
+import ShoesController from '../api/controllers/Shoes.controller'
 
 const router = Router()
 
 router.use('/model', ModelRouter)
 router.use('/users', UserRouter)
+router.use('/shoes', ShoesRouter)
 router.use('/type', TypeRouter)
 router.use('/brand', BrandRouter)
+
+router.post('/shoes', ShoesController.createNew)
 
 router.use('/type_brand', TypeBrandRouter)
 

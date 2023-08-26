@@ -67,8 +67,13 @@ Season.belongsToMany(Brand, {
 
 //SHOES + TYPE
 
-Shoes.belongsTo(Type);
-Type.hasMany(Shoes);
+Shoes.belongsTo(Type, {
+    foreignKey: 'typeId'
+});
+
+Type.hasMany(Shoes, {
+    foreignKey: 'typeId'
+});
 
 Type.belongsTo(Season);
 
@@ -81,6 +86,7 @@ Type.belongsToMany(Brand, {
 //SHOES + MODEL
 
 Shoes.belongsTo(Model);
+
 Model.hasMany(Shoes);
 
 Model.belongsTo(Type);
@@ -93,14 +99,17 @@ Model.belongsToMany(Season, {
 
 Size.hasOne(Shoes);
 
-Shoes.belongsToMany(Size, {
-    through: "shoes_size",
-});
+Shoes.belongsTo(Size);
 
 //SHOES + BRAND
 
-Shoes.belongsTo(Brand);
-Brand.hasMany(Shoes);
+Shoes.belongsTo(Brand, {
+    foreignKey: 'brandId'
+});
+
+Brand.hasMany(Shoes, {
+    foreignKey: 'brandId'
+});
 
 Brand.hasMany(Model);
 

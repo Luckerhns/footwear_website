@@ -1,8 +1,10 @@
-class ModelService {
-    public static async create(model, dto) {
-        const Model = model.create(dto ?? {...dto}, )
+import { Model } from "../../database/Relations"
 
-        return Model
+class ModelService {
+    public static async create(dto) {
+        const model = Model.create({...dto})
+
+        return model
     }
     public static async getOne(req, res, next) {}
     public static async getAll(req, res, next) {}

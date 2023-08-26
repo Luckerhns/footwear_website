@@ -6,7 +6,7 @@ class TypeService {
     static async create(params?) {
         const param_type = params?.type
 
-        const hasType = await isModelExists(Type, {})
+        const hasType = await isModelExists(Type, {type: param_type})
 
         if(hasType) {
             throw new ModelException(409, 'This type has exists')

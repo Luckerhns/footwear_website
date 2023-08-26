@@ -1,8 +1,18 @@
+import Season from "../../database/models/Season";
+
 class SeasonService {
-    private static async create(req, res, next) {}
-    private static async getOne(req, res, next) {}
-    private static async getAll(req, res, next) {}
-    private static async deleteOne(req, res, next) {}
+    public static async create({ dto }, included) {
+        const season = await Season.create({...dto})
+
+        return season
+    }
+    public static async getOne(dto , included?) {
+        const season = await Season.findOne({where: {...dto}, include: included})
+
+        return season
+    }
+    public static async getAll({ dto }, included) {}
+    public static async deleteOne({ dto }, included) {}
 }
 
-export default SeasonService
+export default SeasonService;

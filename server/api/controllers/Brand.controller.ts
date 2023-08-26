@@ -1,8 +1,6 @@
 import { Model, Type } from "../../database/Relations"
 import Brand from "../../database/models/Brand"
 import Season from "../../database/models/Season"
-import { ModelException } from "../exceptions/ModelException"
-import { isModelExists } from "../middlewares/model-middleware"
 import BrandService from "../services/Brand.service"
 
 class BrandController {
