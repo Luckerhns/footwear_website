@@ -59,7 +59,9 @@ Season.belongsToMany(Shoes, {
     through: "shoes_season"
 });
 
-Season.hasMany(Model);
+Season.belongsToMany(Model, {
+    through: "model_season"
+});
 
 Season.belongsToMany(Brand, {
     through: 'brand_season'
@@ -85,14 +87,18 @@ Type.belongsToMany(Brand, {
 
 //SHOES + MODEL
 
-Shoes.belongsTo(Model);
+Shoes.belongsTo(Model, {
+    foreignKey: 'modelId'
+});
 
-Model.hasMany(Shoes);
+Model.hasMany(Shoes, {
+    foreignKey: 'modelId'
+});
 
 Model.belongsTo(Type);
 
 Model.belongsToMany(Season, {
-    through: "model_season"
+    through: ""
 });
 
 //SHOES + SIZE

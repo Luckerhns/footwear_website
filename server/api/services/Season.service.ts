@@ -1,7 +1,7 @@
 import Season from "../../database/models/Season";
 
 class SeasonService {
-    public static async create({ dto }, included) {
+    public static async create(dto, included?) {
         const season = await Season.create({...dto})
 
         return season

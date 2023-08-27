@@ -4,6 +4,8 @@ import TypeBrandRouter from './TypeBrandRouter'
 import UserRouter from './UserRouter'
 import TypeRouter from './TypeRouter'
 import ShoesRouter from './ShoesRouter'
+import SeasonRouter from './SeasonRouter'
+import SizeRouter from './SizeRouter'
 import ActivateController from '../api/controllers/Activate.controller'
 import BrandRouter from './BrandRouter'
 import ShoesController from '../api/controllers/Shoes.controller'
@@ -15,6 +17,8 @@ router.use('/users', UserRouter)
 router.use('/shoes', ShoesRouter)
 router.use('/type', TypeRouter)
 router.use('/brand', BrandRouter)
+router.use('/size', SizeRouter)
+router.use('/season', SeasonRouter)
 
 router.post('/shoes', ShoesController.createNew)
 
