@@ -26,7 +26,7 @@ class ShoesController {
 
             const _size = await SizeService.create({size: size})
 
-            const models = [_type, _brand, _season, _size, _model]
+            const models = [_type, _brand, _size, _model]
 
             for(let i = 0; i < models.length; i++) {
                 if(!models[i]) {

@@ -19,10 +19,9 @@ router.use('/type', TypeRouter)
 router.use('/brand', BrandRouter)
 router.use('/size', SizeRouter)
 router.use('/season', SeasonRouter)
+router.use('/type_brand', TypeBrandRouter)
 
 router.post('/shoes', ShoesController.createNew)
-
-router.use('/type_brand', TypeBrandRouter)
 
 router.get('/activate/:link', ActivateController.activate)
 

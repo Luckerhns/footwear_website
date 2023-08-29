@@ -51,13 +51,13 @@ Photo.belongsTo(Shoes);
 
 //SHOES + SEASON
 
-Shoes.belongsToMany(Season, {
-    through: "shoes_season"
-});
+// Shoes.belongsToMany(Season, {
+//     through: "shoes_season"
+// });
 
-Season.belongsToMany(Shoes, {
-    through: "shoes_season"
-});
+// Season.belongsToMany(Shoes, {
+//     through: "shoes_season"
+// });
 
 Season.belongsToMany(Model, {
     through: "model_season"
@@ -98,7 +98,7 @@ Model.hasMany(Shoes, {
 Model.belongsTo(Type);
 
 Model.belongsToMany(Season, {
-    through: ""
+    through: "model_season"
 });
 
 //SHOES + SIZE

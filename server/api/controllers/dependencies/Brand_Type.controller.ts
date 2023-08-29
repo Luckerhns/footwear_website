@@ -1,7 +1,7 @@
 import { Type } from "../../../database/Relations"
 import Brand from "../../../database/models/Brand"
 import {ModelException} from "../../exceptions/ModelException"
-import { isModelExists } from "../../middlewares/model-middleware"
+import { isModelExists } from "../../middlewares/checkModel"
 import BrandService from "../../services/Brand.service"
 import TypeService from "../../services/Type.service"
 

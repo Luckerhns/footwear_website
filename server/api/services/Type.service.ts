@@ -1,6 +1,6 @@
 import { Type } from "../../database/Relations"
 import { ModelException } from "../exceptions/ModelException"
-import { isModelExists } from "../middlewares/model-middleware"
+import { isModelExists } from "../middlewares/checkModel"
 
 class TypeService {
     static async create(params?) {

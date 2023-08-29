@@ -3,9 +3,10 @@ dotenv.config();
 import Express, { json } from "express";
 import { router } from "./routes/index";
 import sequelize from "./database/db";
-import errorMiddleware from "./api/middlewares/error-middleware";
+import errorHandler from "./api/middlewares/error-handler";
 import cors from "cors";
 import cookies from "cookie-parser";
+import errorMiddlewares from "./api/middlewares/error-middlewares";
 
 const app = Express();
 const PORT = process.env.PORT;
@@ -19,13 +20,13 @@ app.use(
     })
 );
 app.use("/api", router);
-app.use(errorMiddleware);
+app.use(errorMiddlewares);
 
 const start = async () => {
     try {
         await sequelize.authenticate();
-        // await sequelize.sync();
-        await sequelize.sync({alter: true, force: true});
+        await sequelize.sync();
+        // await sequelize.sync({alter: true, force: true});
         app.listen(PORT, () => {
             console.log(`Server listening on PORT => ${PORT}`);
         });

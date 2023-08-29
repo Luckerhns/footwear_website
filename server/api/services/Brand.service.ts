@@ -1,7 +1,7 @@
 import { Type } from "../../database/Relations";
 import Brand from "../../database/models/Brand";
 import { ModelException } from "../exceptions/ModelException";
-import { isModelExists } from "../middlewares/model-middleware";
+import { isModelExists } from "../middlewares/checkModel";
 
 class BrandService {
     public static async create(params) {
